@@ -10,11 +10,11 @@ import (
 	"github.com/dElCIoGio/filestorage/internal/platform/workerspool"
 )
 
-func NewDev(cfg config.Config) (*FileStorageApp, error) {
+func NewTest(cfg config.Config) (*FileStorageApp, error) {
 	logger := logging.NewLogger()
 	bus := events.NewInMemoryBus(logger)
 
-	videoUploadWorkerPool := workerspool.NewWorkerPool[application.VideoUploadData](3, 10)
+	videoUploadWorkerPool := workerspool.NewWorkerPool[application.VideoUploadData](1, 10)
 
 	service := signingService.NewFakeService()
 	signingModule := signing.NewModule(service)
