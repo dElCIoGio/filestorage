@@ -1,4 +1,4 @@
-module filestorage
+module github.com/dElCIoGio/filestorage
 
 go 1.18
 
